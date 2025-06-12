@@ -7,6 +7,6 @@ CREATE TABLE finance.sub_category
   create_datetime   TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,      
   update_datetime   TIMESTAMP,          --NULL
   CONSTRAINT fk_category FOREIGN KEY (category_id)
-    REFERENCES category(id)
+    REFERENCES finance.category(id)
     ON DELETE SET NULL
 );
