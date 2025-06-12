@@ -1,13 +1,13 @@
-CREATE TABLE finance.items
+CREATE TABLE FINANCE.ITEMS
 (
-  id                  NUMBER(6) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name                VARCHAR2(20)          NOT NULL,
-  description         VARCHAR2(100),        --NULL
-  sub_category_id     NUMBER(6),            --NULL
-  is_necessary        NUMBER(1) DEFAULT 0 CHECK (is_necessary IN (0, 1)),
-  create_datetime     TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  update_datetime     TIMESTAMP,            --NULL
-  CONSTRAINT fk_sub_category FOREIGN KEY (sub_category_id)
-    REFERENCES finance.sub_category(id)
+  ID                  NUMBER(6) GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  NAME                VARCHAR2(20)          NOT NULL,
+  DESCRIPTION         VARCHAR2(100),        --NULL
+  SUBCATEGORY_ID      NUMBER(6),            --NULL
+  IS_NECESSARY        NUMBER(1) DEFAULT 0 CHECK (is_necessary IN (0, 1)),
+  CREATE_DATETIME     TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  UPDATE_DATETIME     TIMESTAMP,            --NULL
+  CONSTRAINT FK_SUB_CATEGORY FOREIGN KEY (SUBCATEGORY_ID)
+    REFERENCES FINANCE.SUBCATEGORIES(ID)
     ON DELETE SET NULL
 );
